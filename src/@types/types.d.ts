@@ -1,5 +1,5 @@
 import 'styled-components'
-import { themeDefault } from '../style/theme/default'
+import { themeDefault } from '../styles/theme/default'
 
 type ThemeCoffe = typeof themeDefault
 

@@ -8,10 +8,12 @@ export const themeDefault = {
 
   blue200: '#9CE0E7',
   blue500: '#087F8C',
+  blue700: '#076671',
 
   gray500: '#403937',
   gray700: '#272221',
 
   light100: '#FAFAFA',
-  light200: '#EBE5F9',
+  light200: '#F3F2F2',
+  light300: '#EBE5F9',
 }

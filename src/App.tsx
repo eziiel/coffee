@@ -1,6 +1,6 @@
-import { GlobalStyles } from './style/global'
+import { GlobalStyles } from './styles/global'
 import { ThemeProvider } from 'styled-components'
-import { themeDefault } from './style/theme/default'
+import { themeDefault } from './styles/theme/default'
 import { BrowserRouter } from 'react-router-dom'
 import { Router } from './router'
 
