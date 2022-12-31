@@ -10,10 +10,12 @@ export const GlobalStyles = createGlobalStyle`
   body{
     background: ${(props) => props.theme.light200};
     color: ${(props) => props.theme.gray700};
+    font-family: 'Playfair Display', serif;
+    
+    font-family: 'Hanken Grotesk', sans-serif;
   }
   
   body, input, text-area, button {
-    font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-size: 1rem;
     -webkit-font-smothing: antialiesed;
