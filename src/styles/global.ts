@@ -13,6 +13,8 @@ export const GlobalStyles = createGlobalStyle`
     font-family: 'Playfair Display', serif;
     
     font-family: 'Hanken Grotesk', sans-serif;
+
+    height: 1500px;
   }
   
   body, input, text-area, button {

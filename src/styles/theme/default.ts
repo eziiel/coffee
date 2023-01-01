@@ -6,10 +6,14 @@ export const themeDefault = {
   yellow600: '#DBAC2C',
   yellow700: '#C47F17',
 
-  blue200: '#9CE0E7',
+  blue200: '#B3DEE2',
   blue500: '#087F8C',
   blue700: '#076671',
+  blue900: '#05515A',
 
+  gray100: '#ECECEC',
+  gray200: '#DFDFDF',
+  gray300: '#939393',
   gray500: '#403937',
   gray700: '#272221',
 
