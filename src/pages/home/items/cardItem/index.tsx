@@ -1,26 +1,41 @@
 import React from 'react'
 import * as S from './styled'
-import Img from '../../../../../public/img/coffees/expresso-tradicional.svg'
 import { ShoppingCart } from 'phosphor-react'
 
-export const CoffeeCardItem = () => {
+interface DataCoffees {
+  img: string
+  type: string[]
+  title: string
+  info: string
+  price: string
+}
+
+export const CoffeeCardItem = ({
+  title,
+  info,
+  img,
+  price,
+  type,
+}: DataCoffees) => {
   return (
     <S.CoffeeCard>
-      <S.CoffeeImg src={Img} title="" />
-      <S.CoffeeType>tradicional</S.CoffeeType>
-      <S.CoffeeTitle>expresso tradicional</S.CoffeeTitle>
-      <S.CoffeeInfo>
-        O tradicional café feito com água quente e grãos moídos
-      </S.CoffeeInfo>
+      <S.CoffeeImg src={img} title="" />
+      <S.CoffeeTypeList>
+        {type.map((coffeeType) => (
+          <S.CoffeeType key={coffeeType}>{coffeeType}</S.CoffeeType>
+        ))}
+      </S.CoffeeTypeList>
+      <S.CoffeeTitle>{title}</S.CoffeeTitle>
+      <S.CoffeeInfo> {info}</S.CoffeeInfo>
 
       <S.CoffeeBuy>
         <S.CoffeePrice>
           <S.PriceCifre>RS</S.PriceCifre>
-          <S.PriceNumber>9,90</S.PriceNumber>
+          <S.PriceNumber>{price}</S.PriceNumber>
         </S.CoffeePrice>
         <S.CoffeeControlledAmount>
           <S.CoffeeAmount> - </S.CoffeeAmount>
-          <S.CoffeeAmountItems> 123 </S.CoffeeAmountItems>
+          <S.CoffeeAmountItems> 5 </S.CoffeeAmountItems>
           <S.CoffeeAmount> + </S.CoffeeAmount>
         </S.CoffeeControlledAmount>
         <S.CoffeeCart>

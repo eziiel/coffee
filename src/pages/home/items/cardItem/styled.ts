@@ -8,7 +8,7 @@ export const CoffeeCard = styled.div`
   justify-content: center;
   align-items: center;
 
-  max-width: 250px;
+  max-width: 260px;
   border-radius: 8px 40px 8px 40px;
   padding: 1rem;
   gap: 1rem;
@@ -21,7 +21,11 @@ export const CoffeeImg = styled.img`
   border-radius: 50%;
   margin-top: -2rem;
 `
-
+export const CoffeeTypeList = styled.div`
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+`
 export const CoffeeType = styled.span`
   background: ${(props) => props.theme.blue200};
   color: ${(props) => props.theme.blue900};
@@ -76,7 +80,7 @@ export const CoffeeControlledAmount = styled.div`
   border-radius: 8px;
   overflow: hidden;
 
-  width: 100px;
+  width: 80px;
   height: 100%;
   background-color: red;
   background: ${(props) => props.theme.gray200};
@@ -103,7 +107,7 @@ export const CoffeeCart = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 0.5rem;
+  margin-left: 1rem;
   padding: 0.5rem;
   background: ${(props) => props.theme.blue900};
   border-radius: 8px;
