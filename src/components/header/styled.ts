@@ -25,7 +25,6 @@ const BaseLi = styled.li`
   gap: 0.2rem;
   display: flex;
   align-items: center;
-  padding: 0.5rem;
   border-radius: 8px;
 `
 
@@ -33,16 +32,22 @@ export const LiLocation = styled(BaseLi)`
   background: ${(props) => props.theme.blue200};
   color: ${(props) => props.theme.blue700};
   font-weight: 600;
+  padding: 0.5rem;
   letter-spacing: 0.5px;
 `
 
 export const LiCart = styled(BaseLi)`
   background: ${(props) => props.theme.yellow500};
   background: ${(props) => props.theme.yellow500};
-  color: ${(props) => props.theme.yellow700};
 
   cursor: pointer;
   position: relative;
+
+  a {
+    padding: 0.5rem;
+    width: 100%;
+    height: 100%;
+  }
 `
 export const ItensInfoSpan = styled.span`
   position: absolute;
