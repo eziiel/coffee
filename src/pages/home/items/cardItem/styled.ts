@@ -8,7 +8,7 @@ export const CoffeeCard = styled.div`
   justify-content: center;
   align-items: center;
 
-  max-width: 260px;
+  max-width: 250px;
   border-radius: 8px 40px 8px 40px;
   padding: 1rem;
   gap: 1rem;
