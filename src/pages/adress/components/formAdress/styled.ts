@@ -86,4 +86,42 @@ export const FormAdressPayType = styled(BaseFormContainer).attrs({
   as: 'footer',
 })``
 
-export const FormAdressPayTypeHeader = styled.footer``
+export const FormAdressPayTypeHeader = styled.footer`
+  display: flex;
+  flex-direction: column;
+`
+export const FooterHeader = styled.div`
+  display: grid;
+  grid-template-columns: 25px 1fr;
+
+  margin-bottom: 2rem;
+
+  span:nth-child(2) {
+    font-size: 1.125rem;
+    letter-spacing: 0.5;
+  }
+  span:nth-child(3) {
+    grid-column: 2 / -1;
+    font-size: 0.875rem;
+    color: ${(props) => props.theme.gray500};
+  }
+`
+export const FooterCartPay = styled.div`
+  display: flex;
+  gap: 1rem;
+`
+
+export const FooterCartItem = styled.button`
+  border: none;
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: ${(props) => props.theme.gray200};
+  padding: 1rem;
+  text-transform: capitalize;
+  border-radius: 8px;
+  cursor: pointer;
+`

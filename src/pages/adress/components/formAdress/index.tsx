@@ -21,10 +21,18 @@ export const FormAdress = () => {
       </S.FormAdressFields>
       <S.FormAdressPayType>
         <S.FormAdressPayTypeHeader>
-          <CurrencyDollarSimple />
-          <span>
-            O pagamento é feito na entrega. Escolha a forma que deseja pagar
-          </span>
+          <S.FooterHeader>
+            <CurrencyDollarSimple size={20} color="#05515A" />
+            <span>Pagamento</span>
+            <span>
+              O pagamento é feito na entrega. Escolha a forma que deseja pagar
+            </span>
+          </S.FooterHeader>
+          <S.FooterCartPay>
+            <S.FooterCartItem>cartão</S.FooterCartItem>
+            <S.FooterCartItem>dinheiro</S.FooterCartItem>
+            <S.FooterCartItem>pix</S.FooterCartItem>
+          </S.FooterCartPay>
         </S.FormAdressPayTypeHeader>
       </S.FormAdressPayType>
     </S.FormAdressContainer>
