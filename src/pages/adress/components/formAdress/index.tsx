@@ -35,11 +35,11 @@ export const FormAdress = () => {
             </span>
           </S.FooterHeader>
           <S.FooterCartPay>
-            <S.FooterCartItem title="Cartão">
+            <S.FooterCartItem title="Cartão" disabled>
               <CreditCard size={20} color="#05515A" />
               cartão
             </S.FooterCartItem>
-            <S.FooterCartItem title="Dinheiro">
+            <S.FooterCartItem title="Dinheiro" disabled>
               <Money size={20} color="#05515A" />
               dinheiro
             </S.FooterCartItem>
