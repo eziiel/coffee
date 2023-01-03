@@ -123,7 +123,16 @@ export const FooterCartItem = styled.button`
 
   background: ${(props) => props.theme.gray200};
   padding: 1rem;
-  text-transform: capitalize;
+  text-transform: uppercase;
   border-radius: 8px;
   cursor: pointer;
+  color: ${(props) => props.theme.gray700};
+
+  :hover,
+  :focus,
+  :enabled {
+    outline: 0;
+    background: ${(props) => props.theme.blue200};
+    box-shadow: 0 0 0 2px ${(props) => props.theme.blue500};
+  }
 `
