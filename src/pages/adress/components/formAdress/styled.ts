@@ -44,8 +44,9 @@ export const FormAdressHeader = styled.header`
 const BaseInputFields = styled.input`
   background: ${(props) => props.theme.gray200};
   border: none;
-  padding: 0.5rem;
+  padding: 1rem;
   border-radius: 8px;
+  font-size: 0.875rem;
 `
 
 export const AdressCep = styled(BaseInputFields)`
@@ -117,7 +118,8 @@ export const FooterCartItem = styled.button`
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
+  gap: 1rem;
 
   background: ${(props) => props.theme.gray200};
   padding: 1rem;

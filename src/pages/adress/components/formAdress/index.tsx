@@ -1,6 +1,12 @@
 import React from 'react'
 import * as S from './styled'
-import { MapPinLine, CurrencyDollarSimple } from 'phosphor-react'
+import {
+  MapPinLine,
+  CurrencyDollarSimple,
+  Money,
+  CreditCard,
+  BoundingBox,
+} from 'phosphor-react'
 
 export const FormAdress = () => {
   return (
@@ -11,13 +17,13 @@ export const FormAdress = () => {
           <span>Endereço para entrega</span>
           <span> Informe o endereço onde deseja receber a entrega</span>
         </S.FormAdressHeader>
-        <S.AdressCep />
-        <S.AdressStreet />
-        <S.AdressNumber />
-        <S.AdressDistrict />
-        <S.AdressComplement />
-        <S.AdressCity />
-        <S.AdressState />
+        <S.AdressCep placeholder="CEP" />
+        <S.AdressStreet placeholder="Rua" />
+        <S.AdressNumber placeholder="Número" />
+        <S.AdressDistrict placeholder="Bairro" />
+        <S.AdressComplement placeholder="Complemento" />
+        <S.AdressCity placeholder="Cidade" />
+        <S.AdressState placeholder="UF" />
       </S.FormAdressFields>
       <S.FormAdressPayType>
         <S.FormAdressPayTypeHeader>
@@ -29,9 +35,18 @@ export const FormAdress = () => {
             </span>
           </S.FooterHeader>
           <S.FooterCartPay>
-            <S.FooterCartItem>cartão</S.FooterCartItem>
-            <S.FooterCartItem>dinheiro</S.FooterCartItem>
-            <S.FooterCartItem>pix</S.FooterCartItem>
+            <S.FooterCartItem title="Cartão">
+              <CreditCard size={20} color="#05515A" />
+              cartão
+            </S.FooterCartItem>
+            <S.FooterCartItem title="Dinheiro">
+              <Money size={20} color="#05515A" />
+              dinheiro
+            </S.FooterCartItem>
+            <S.FooterCartItem title="Pix">
+              <BoundingBox size={20} color="#05515A" />
+              pix
+            </S.FooterCartItem>
           </S.FooterCartPay>
         </S.FormAdressPayTypeHeader>
       </S.FormAdressPayType>
