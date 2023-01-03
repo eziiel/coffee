@@ -1,7 +1,8 @@
 import React from 'react'
 import * as S from './styled'
-import IMG from '../../../../../../public/img/coffees/capuccino.svg'
+import IMG from '../../../../../../../public/img/coffees/capuccino.svg'
 import { Trash } from 'phosphor-react'
+import { ControledAmount } from '../../../../../../assets/ControledAmount'
 
 export const CartItem = () => {
   return (
@@ -9,7 +10,7 @@ export const CartItem = () => {
       <S.ImgCardRequest src={IMG} />
       <S.InfoItemCardRequest>
         <S.TitleItemCardRequest>expresso tradicional</S.TitleItemCardRequest>
-        <div>add</div>
+        <ControledAmount amount={5} />
         <S.ButtonItemCardRequest>
           <Trash color="#05515A" />
           Remover

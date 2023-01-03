@@ -18,6 +18,8 @@ export const themeDefault = {
   gray500: '#403937',
   gray700: '#272221',
 
+  black: '#000',
+
   light100: '#FAFAFA',
   light200: '#F3F2F2',
   light300: '#EBE5F9',

@@ -64,44 +64,13 @@ export const CoffeePrice = styled.div`
 
 export const PriceCifre = styled.span`
   color: ${(props) => props.theme.gray300};
+  color: ${(props) => props.theme.gray300};
   flex: 1;
 `
 
 export const PriceNumber = styled.span`
   font-size: 1.5rem;
   margin-right: 0.5rem;
-`
-
-export const CoffeeControlledAmount = styled.div`
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-radius: 8px;
-  overflow: hidden;
-
-  width: 80px;
-  height: 100%;
-  background-color: red;
-  background: ${(props) => props.theme.gray200};
-
-  font-size: 1.5rem;
-`
-
-export const CoffeeAmount = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 30px;
-  height: 100%;
-
-  color: ${(props) => props.theme.blue900};
-  cursor: pointer;
-`
-
-export const CoffeeAmountItems = styled.span`
-  font-size: 1.125rem;
 `
 
 export const CoffeeCart = styled.button`

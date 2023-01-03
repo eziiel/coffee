@@ -1,5 +1,6 @@
 import React from 'react'
-import { CartItem } from './components/cartItem'
+import { CartRequest } from './components/CartRequest'
+import { CartItem } from './components/ItemCard'
 import * as S from './styled'
 
 export const FormRequest = () => {
@@ -7,6 +8,8 @@ export const FormRequest = () => {
     <S.FormRequestContainer>
       <CartItem />
       <CartItem />
+      <CartItem />
+      <CartRequest />
     </S.FormRequestContainer>
   )
 }

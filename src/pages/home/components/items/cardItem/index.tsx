@@ -1,6 +1,7 @@
 import React from 'react'
 import * as S from './styled'
 import { ShoppingCart } from 'phosphor-react'
+import { ControledAmount } from '../../../../../assets/ControledAmount'
 
 interface DataCoffees {
   img: string
@@ -33,11 +34,7 @@ export const CoffeeCardItem = ({
           <S.PriceCifre>RS</S.PriceCifre>
           <S.PriceNumber>{price}</S.PriceNumber>
         </S.CoffeePrice>
-        <S.CoffeeControlledAmount>
-          <S.CoffeeAmount> - </S.CoffeeAmount>
-          <S.CoffeeAmountItems> 5 </S.CoffeeAmountItems>
-          <S.CoffeeAmount> + </S.CoffeeAmount>
-        </S.CoffeeControlledAmount>
+        <ControledAmount amount={5} />
         <S.CoffeeCart>
           <ShoppingCart size={24} color="#fff" weight="fill" />
         </S.CoffeeCart>
