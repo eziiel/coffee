@@ -28,6 +28,8 @@ export const TitleItemCardRequest = styled.span`
 
   text-transform: uppercase;
   font-size: 0.8rem;
+  color: ${(props) => props.theme.gray700};
+  font-weight: bold;
 `
 
 export const ButtonItemCardRequest = styled.button`

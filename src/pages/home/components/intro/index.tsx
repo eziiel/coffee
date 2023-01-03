@@ -1,6 +1,6 @@
 import React from 'react'
 import * as S from './styled'
-import IntroImg from '../../../../public/img/home-img.png'
+import IntroImg from '../../../../../public/img/home-img.png'
 import { ShoppingCart, Package, Timer, Coffee } from 'phosphor-react'
 
 export const IntroHome = () => {

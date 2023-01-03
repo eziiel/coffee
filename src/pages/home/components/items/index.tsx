@@ -1,7 +1,7 @@
 import React from 'react'
 import { CoffeeCardItem } from './cardItem'
 import * as S from './styled'
-import Coffes from '../../../../public/json/items.json'
+import Coffes from '../../../../../public/json/items.json'
 
 export const Main = () => {
   return (
