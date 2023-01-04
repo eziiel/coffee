@@ -1,6 +1,7 @@
 import React from 'react'
 import * as S from './styled'
 import { MapPin, Timer, CurrencyDollar } from 'phosphor-react'
+import ImgDelivery from '../../../public/img/delivery.png'
 
 export const Delivery = () => {
   return (
@@ -16,7 +17,10 @@ export const Delivery = () => {
               <S.IconMap>
                 <MapPin size={24} color="#fff" />
               </S.IconMap>
-              <span>Entrega em Rua João Daniel Martinelli, 102</span>
+              <span>
+                Entrega em
+                <strong> Rua João Daniel Martinelli, 102</strong>
+              </span>
               <span>Farrapos - Porto Alegre, RS</span>
             </S.DeliveryRequestInfoItem>
 
@@ -25,7 +29,9 @@ export const Delivery = () => {
                 <Timer size={24} color="#fff" />
               </S.IconTimer>
               <span>Previsão de entrega</span>
-              <span>20 min - 30 min</span>
+              <span>
+                <strong>20 min - 30 min</strong>
+              </span>
             </S.DeliveryRequestInfoItem>
 
             <S.DeliveryRequestInfoItem>
@@ -33,11 +39,14 @@ export const Delivery = () => {
                 <CurrencyDollar size={24} color="#fff" />
               </S.IconDollar>
               <span>Pagamento na entrega</span>
-              <span>Cartão de Crédito</span>
+              <span>
+                <strong>Cartão de Crédito</strong>
+              </span>
             </S.DeliveryRequestInfoItem>
           </S.DeliveryRequestInfo>
         </S.DeliveryRequestInfoBorder>
       </S.DeliveryInfo>
+      <S.DeliveryImg src={ImgDelivery} alt="homem andando de moto de entrega" />
     </S.DeliveryContent>
   )
 }

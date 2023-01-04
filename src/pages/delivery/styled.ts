@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const DeliveryContent = styled.main`
   display: flex;
-  gap: 2rem;
+  gap: 4rem;
   padding: 2rem;
   margin-top: 2rem;
 `
@@ -36,7 +36,7 @@ export const DeliveryRequestInfoBorder = styled.div`
 `
 
 export const DeliveryRequestInfo = styled.div`
-  width: 98.7%;
+  width: 98%;
   height: 98%;
   border-radius: 8px 58px 8px 58px;
 
@@ -47,21 +47,33 @@ export const DeliveryRequestInfo = styled.div`
   flex-direction: column;
   align-items: start;
   justify-content: center;
-  gap: 2rem;
+  gap: 2.5rem;
 
-  padding: 3rem;
+  padding: 1rem;
 `
 
 export const DeliveryRequestInfoItem = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
+  gap: -1rem;
+
+  div:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1/3;
+  }
+  span:nth-child(3) {
+    grid-column: 2;
+  }
 `
 
-const BaseIcon = styled.span`
+const BaseIcon = styled.div`
+  background: red;
   display: flex;
   align-items: center;
   justify-content: start;
+  margin-right: 1rem;
 
   border-radius: 50%;
   padding: 0.5rem;
@@ -76,4 +88,8 @@ export const IconMap = styled(BaseIcon)`
   background: ${(props) => props.theme.yellow700};
 `
 
-export const DeliveryImg = styled.aside``
+export const DeliveryImg = styled.img`
+  align-self: end;
+  width: auto;
+  height: auto;
+`
