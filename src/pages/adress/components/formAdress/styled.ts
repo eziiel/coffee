@@ -7,6 +7,10 @@ export const FormAdressContainer = styled.div`
   gap: 1rem;
 `
 
+export const FormAdressTitle = styled.h2`
+  padding: 1rem 0;
+`
+
 const BaseFormContainer = styled.div`
   background: ${(props) => props.theme.gray100};
   padding: 2rem;

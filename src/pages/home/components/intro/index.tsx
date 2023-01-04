@@ -16,35 +16,31 @@ export const IntroHome = () => {
         </S.IntroText>
 
         <S.IntroInfo>
-          <S.UlIntroInfo>
-            <S.LiIntroInfo>
-              <S.IconCart>
-                <ShoppingCart color="#fff" size={20} />
-              </S.IconCart>
-              Compra simples e segura
-            </S.LiIntroInfo>
-            <S.LiIntroInfo>
-              <S.IconPackage>
-                <Package color="#fff" size={20} />
-              </S.IconPackage>
-              Embalagem mantém o café intacto
-            </S.LiIntroInfo>
-          </S.UlIntroInfo>
+          <S.IntroInfoItem>
+            <S.IconCart>
+              <ShoppingCart color="#fff" size={20} />
+            </S.IconCart>
+            Compra simples e segura
+          </S.IntroInfoItem>
+          <S.IntroInfoItem>
+            <S.IconPackage>
+              <Package color="#fff" size={20} />
+            </S.IconPackage>
+            Embalagem mantém o café intacto
+          </S.IntroInfoItem>
 
-          <S.UlIntroInfo>
-            <S.LiIntroInfo>
-              <S.IconTimer>
-                <Timer color="#fff" size={20} />
-              </S.IconTimer>
-              Entrega rápida e rastreada
-            </S.LiIntroInfo>
-            <S.LiIntroInfo>
-              <S.IconCoffee>
-                <Coffee color="#fff" size={20} />
-              </S.IconCoffee>
-              O café chega fresquinho até você
-            </S.LiIntroInfo>
-          </S.UlIntroInfo>
+          <S.IntroInfoItem>
+            <S.IconTimer>
+              <Timer color="#fff" size={20} />
+            </S.IconTimer>
+            Entrega rápida e rastreada
+          </S.IntroInfoItem>
+          <S.IntroInfoItem>
+            <S.IconCoffee>
+              <Coffee color="#fff" size={20} />
+            </S.IconCoffee>
+            O café chega fresquinho até você
+          </S.IntroInfoItem>
         </S.IntroInfo>
       </S.IntroShow>
       <S.IntroImg src={IntroImg} alt="Copo de cafe com grãos de café do lado" />

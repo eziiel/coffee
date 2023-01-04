@@ -26,18 +26,12 @@ export const IntroText = styled.p`
 
 export const IntroInfo = styled.div`
   margin-top: 3rem;
-  display: flex;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
 `
 
-export const UlIntroInfo = styled.ul`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 3rem;
-  align-items: start;
-`
-export const LiIntroInfo = styled.li`
+export const IntroInfoItem = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;

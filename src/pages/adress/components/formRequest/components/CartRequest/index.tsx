@@ -4,14 +4,14 @@ import * as S from './styled'
 export const CartRequest = () => {
   return (
     <S.CartRequestFooter>
-      <S.CartRequestTotalItems>
+      <S.CartRequestInfo>
         <span>Total de itens</span>
         <span>R$ 29,70</span>
-      </S.CartRequestTotalItems>
-      <S.CartRequestDelivery>
+      </S.CartRequestInfo>
+      <S.CartRequestInfo>
         <span>Entrega</span>
         <span>R$ 3,70</span>
-      </S.CartRequestDelivery>
+      </S.CartRequestInfo>
       <S.CartRequestTotal>
         <span>Total</span>
         <span>R$ 32,70</span>

@@ -3,10 +3,16 @@ import styled from 'styled-components'
 export const FormRequestContainer = styled.form`
   width: 450px;
   height: fit-content;
-  border-radius: 8px 60px 8px 60px;
 
   overflow: hidden;
-  padding: 1rem;
+`
+export const FormRequestTitle = styled.h2`
+  padding: 1rem 0;
+`
 
+export const FormRequestSection = styled.div`
+  margin-top: 1rem;
+  padding: 1rem;
   background: ${(props) => props.theme.gray100};
+  border-radius: 8px 60px 8px 60px;
 `

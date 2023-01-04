@@ -6,10 +6,13 @@ import * as S from './styled'
 export const FormRequest = () => {
   return (
     <S.FormRequestContainer>
-      <CartItem />
-      <CartItem />
-      <CartItem />
-      <CartRequest />
+      <S.FormRequestTitle>Cafés selecionados</S.FormRequestTitle>
+      <S.FormRequestSection>
+        <CartItem />
+        <CartItem />
+        <CartItem />
+        <CartRequest />
+      </S.FormRequestSection>
     </S.FormRequestContainer>
   )
 }

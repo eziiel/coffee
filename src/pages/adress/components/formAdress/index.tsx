@@ -11,6 +11,7 @@ import {
 export const FormAdress = () => {
   return (
     <S.FormAdressContainer>
+      <S.FormAdressTitle>Complete seu pedido</S.FormAdressTitle>
       <S.FormAdressFields>
         <S.FormAdressHeader>
           <MapPinLine size={20} color="#C47F17" />

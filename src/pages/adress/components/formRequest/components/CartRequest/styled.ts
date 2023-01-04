@@ -6,17 +6,15 @@ export const CartRequestFooter = styled.footer`
   padding: 1rem;
   gap: 1rem;
 `
-const BaseCartRequest = styled.div`
+export const CartRequestInfo = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-weight: 400;
+  font-size: 1.125rem;
 `
 
-export const CartRequestTotalItems = styled(BaseCartRequest)``
-
-export const CartRequestDelivery = styled(BaseCartRequest)``
-
-export const CartRequestTotal = styled(BaseCartRequest)`
+export const CartRequestTotal = styled(CartRequestInfo)`
   font-size: 1.5rem;
   font-weight: bold;
 `
