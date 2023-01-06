@@ -11,6 +11,7 @@ export const Main = () => {
         {Coffes.map(({ id, img, title, info, price, type }) => (
           <li key={id}>
             <CoffeeCardItem
+              id={id}
               title={title}
               info={info}
               img={img}

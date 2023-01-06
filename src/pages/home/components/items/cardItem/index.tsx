@@ -4,6 +4,7 @@ import { ShoppingCart } from 'phosphor-react'
 import { ControledAmount } from '../../../../../assets/ControledAmount'
 
 interface DataCoffees {
+  id: number
   img: string
   type: string[]
   title: string
@@ -12,6 +13,7 @@ interface DataCoffees {
 }
 
 export const CoffeeCardItem = ({
+  id,
   title,
   info,
   img,
@@ -34,7 +36,7 @@ export const CoffeeCardItem = ({
           <S.PriceCifre>RS</S.PriceCifre>
           <S.PriceNumber>{price}</S.PriceNumber>
         </S.CoffeePrice>
-        <ControledAmount amount={5} />
+        <ControledAmount amount={5} id={id} title={title} />
         <S.CoffeeCart>
           <ShoppingCart size={24} color="#fff" weight="fill" />
         </S.CoffeeCart>
