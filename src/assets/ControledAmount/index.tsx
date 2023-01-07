@@ -8,25 +8,24 @@ interface CoffeeContextType {
   amount?: number | undefined
 }
 
-export const ControledAmount = ({ amount, title, id }: CoffeeContextType) => {
+export const ControledAmount = ({ title, id }: CoffeeContextType) => {
   const [AmountCoffee, setAmountCoffee] = React.useState(0)
-  const { coffeesRequestCart, setCoffeesRequestItem } =
+  const { coffees, setCoffeesRequestItemAdd, setCoffeesRequestItemRemove } =
     React.useContext(ContextCoffees)
 
   const handleCoffeAddCart = () => {
-    setCoffeesRequestItem({ id, title, amount: 1 })
+    setCoffeesRequestItemAdd({ id, title, amount: 1 })
   }
 
   React.useEffect(() => {
-    const Amount = coffeesRequestCart.find((item) => item.id === id)
-
+    const Amount = coffees.find((item) => item.id === id)
     const AmountCoffeeItem = Amount?.amount || 0
 
     setAmountCoffee(AmountCoffeeItem)
-  }, [coffeesRequestCart, id])
+  }, [coffees, id])
 
   const handleCoffeRemoveCart = () => {
-    console.log(id)
+    setCoffeesRequestItemRemove(id)
   }
   return (
     <S.CoffeeControlledAmount>
