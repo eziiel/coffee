@@ -6,16 +6,19 @@ export enum ActionCoffesTypes {
   REMOVE_DECREMENT_COFFEE = 'REMOVE_DECREMENT_COFFEE',
 }
 
-export function AddNewCoffe(newCoffee: CoffeeContextType) {
+export function AddNewCoffe(NewCoffeeCart: CoffeeContextType) {
   return {
-    type: ActionCoffesTypes.ADD_NEW_COFFEE,
+    type: 'ADD_NEW_COFFEE',
     payload: {
-      newCoffee,
+      NewCoffeeCart,
     },
   }
 }
-export function RemoveDecrementCoffe() {
+export function RemoveDecrementCoffe(RemovedListCoffee: CoffeeContextType) {
   return {
-    type: ActionCoffesTypes.REMOVE_DECREMENT_COFFEE,
+    type: 'REMOVE_DECREMENT_COFFEE',
+    payload: {
+      RemovedListCoffee,
+    },
   }
 }

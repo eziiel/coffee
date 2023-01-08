@@ -1,4 +1,6 @@
 import React, { ReactNode } from 'react'
+import { AddNewCoffe, RemoveDecrementCoffe } from '../reducers/actions'
+import { CoffeesReducer } from '../reducers/reducer'
 
 interface CoffeeContextType {
   id: number
@@ -7,6 +9,7 @@ interface CoffeeContextType {
 }
 
 interface CoffeesContextTypes {
+  amountItens: number
   coffees: CoffeeContextType[]
   setCoffeesRequestItemAdd: (data: CoffeeContextType) => void
   setCoffeesRequestItemRemove: (id: number) => void
@@ -19,18 +22,7 @@ interface CyclesContextProps {
 export const ContextCoffees = React.createContext({} as CoffeesContextTypes)
 
 export const CoffeesProvider = ({ children }: CyclesContextProps) => {
-  const [coffees, dispatch] = React.useReducer(
-    (state: CoffeeContextType[], action: any) => {
-      if (action.type === 'ADD_NEW_COFFEE') {
-        return action.payload.NewCoffeeCart
-      }
-      if (action.type === 'REMOVE_DECREMENT_COFFEE') {
-        return action.payload.RemovedListCoffee
-      }
-      return state
-    },
-    [],
-  )
+  const [coffees, dispatch] = React.useReducer(CoffeesReducer, [])
   const setCoffeesRequestItemAdd = (data: CoffeeContextType) => {
     const NewCoffee = {
       id: data.id,
@@ -52,12 +44,7 @@ export const CoffeesProvider = ({ children }: CyclesContextProps) => {
       NewCoffeeCart.push(NewCoffee)
     }
 
-    dispatch({
-      type: 'ADD_NEW_COFFEE',
-      payload: {
-        NewCoffeeCart,
-      },
-    })
+    dispatch(AddNewCoffe(NewCoffeeCart))
   }
 
   const setCoffeesRequestItemRemove = (id: number) => {
@@ -71,17 +58,17 @@ export const CoffeesProvider = ({ children }: CyclesContextProps) => {
       (item: CoffeeContextType) => item.amount! > 0,
     )
 
-    dispatch({
-      type: 'REMOVE_DECREMENT_COFFEE',
-      payload: {
-        RemovedListCoffee,
-      },
-    })
+    dispatch(RemoveDecrementCoffe(RemovedListCoffee))
   }
 
+  const amountItens = coffees.reduce(
+    (total: number, coffee: CoffeeContextType) => (total += coffee.amount!),
+    0,
+  )
   return (
     <ContextCoffees.Provider
       value={{
+        amountItens,
         coffees,
         setCoffeesRequestItemAdd,
         setCoffeesRequestItemRemove,

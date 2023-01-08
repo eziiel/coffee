@@ -5,16 +5,16 @@ export interface CoffeeContextType {
   title: string
   amount?: number
 }
-interface CoffeesList {
-  coffees: CoffeeContextType[]
-}
 
-export const CoffeesReducer = (state: CoffeesList, action: any) => {
+export const CoffeesReducer = (state: CoffeeContextType[], action: any) => {
   switch (action.type) {
-    case ActionCoffesTypes.ADD_NEW_COFFEE:
-      return {
-        ...state,
-        coffees: [...state.coffees, action.payload.]
-      }
+    case ActionCoffesTypes.ADD_NEW_COFFEE: {
+      return action.payload.NewCoffeeCart
+    }
+    case ActionCoffesTypes.REMOVE_DECREMENT_COFFEE: {
+      return action.payload.RemovedListCoffee
+    }
+    default:
+      return state
   }
 }
