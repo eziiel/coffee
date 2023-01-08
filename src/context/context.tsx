@@ -1,11 +1,16 @@
 import React, { ReactNode } from 'react'
-import { AddNewCoffe, RemoveDecrementCoffe } from '../reducers/actions'
+import {
+  AddNewCoffe,
+  RemoveDecrementCoffe,
+  RemoveItemAll,
+} from '../reducers/actions'
 import { CoffeesReducer } from '../reducers/reducer'
 
 interface CoffeeContextType {
   id: number
   title: string
   price: string
+  img: string
   totalPrice?: string
   amount?: number
 }
@@ -16,6 +21,7 @@ interface CoffeesContextTypes {
   coffees: CoffeeContextType[]
   setCoffeesRequestItemAdd: (data: CoffeeContextType) => void
   setCoffeesRequestItemRemove: (id: number, price: string) => void
+  RemoveItem: (id: number) => void
 }
 
 interface CyclesContextProps {
@@ -31,12 +37,14 @@ export const CoffeesProvider = ({ children }: CyclesContextProps) => {
     id,
     title,
     price,
+    img,
     amount,
   }: CoffeeContextType) => {
     const NewCoffee = {
       id,
       title,
       price,
+      img,
       totalPrice: price,
       amount,
     }
@@ -74,6 +82,14 @@ export const CoffeesProvider = ({ children }: CyclesContextProps) => {
     dispatch(RemoveDecrementCoffe(RemovedListCoffee))
   }
 
+  const RemoveItem = (id: number) => {
+    const NewListCoffee = coffees.filter(
+      (coffee: CoffeeContextType) => coffee.id !== id,
+    )
+
+    dispatch(RemoveItemAll(NewListCoffee))
+  }
+
   const amountCoffes = coffees.reduce(
     (total: number, coffee: CoffeeContextType) => (total += coffee.amount!),
     0,
@@ -94,6 +110,7 @@ export const CoffeesProvider = ({ children }: CyclesContextProps) => {
         coffees,
         setCoffeesRequestItemAdd,
         setCoffeesRequestItemRemove,
+        RemoveItem,
       }}
     >
       {children}

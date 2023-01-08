@@ -11,8 +11,15 @@ export const FormRequest = () => {
     <S.FormRequestContainer>
       <S.FormRequestTitle>Cafés selecionados</S.FormRequestTitle>
       <S.FormRequestSection>
-        {coffees.map(({ id, title, price }) => (
-          <CartItem key={id} title={title} id={id} price={price} />
+        {coffees.map(({ id, title, img, price, totalPrice }) => (
+          <CartItem
+            key={id}
+            title={title}
+            id={id}
+            img={img}
+            price={price}
+            totalPrice={totalPrice || '0'}
+          />
         ))}
         <CartRequest />
       </S.FormRequestSection>

@@ -59,4 +59,8 @@ export const PriceCardRequest = styled.strong`
   align-self: flex-start;
   color: ${(props) => props.theme.gray400};
   font-size: 0.875rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 `
