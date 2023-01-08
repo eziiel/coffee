@@ -5,16 +5,17 @@ import * as S from './styled'
 interface CoffeeContextType {
   id: number
   title: string
+  price: string
   amount?: number | undefined
 }
 
-export const ControledAmount = ({ title, id }: CoffeeContextType) => {
+export const ControledAmount = ({ id, title, price }: CoffeeContextType) => {
   const [AmountCoffee, setAmountCoffee] = React.useState(0)
   const { coffees, setCoffeesRequestItemAdd, setCoffeesRequestItemRemove } =
     React.useContext(ContextCoffees)
 
   const handleCoffeAddCart = () => {
-    setCoffeesRequestItemAdd({ id, title, amount: 1 })
+    setCoffeesRequestItemAdd({ id, title, price, amount: 1 })
   }
 
   React.useEffect(() => {
@@ -25,7 +26,7 @@ export const ControledAmount = ({ title, id }: CoffeeContextType) => {
   }, [coffees, id])
 
   const handleCoffeRemoveCart = () => {
-    setCoffeesRequestItemRemove(id)
+    setCoffeesRequestItemRemove(id, price)
   }
   return (
     <S.CoffeeControlledAmount>

@@ -1,16 +1,19 @@
 import React from 'react'
+import { ContextCoffees } from '../../../../context/context'
 import { CartRequest } from './components/CartRequest'
 import { CartItem } from './components/ItemCard'
 import * as S from './styled'
 
 export const FormRequest = () => {
+  const { coffees } = React.useContext(ContextCoffees)
+
   return (
     <S.FormRequestContainer>
       <S.FormRequestTitle>Cafés selecionados</S.FormRequestTitle>
       <S.FormRequestSection>
-        <CartItem />
-        <CartItem />
-        <CartItem />
+        {coffees.map(({ id, title, price }) => (
+          <CartItem key={id} title={title} id={id} price={price} />
+        ))}
         <CartRequest />
       </S.FormRequestSection>
     </S.FormRequestContainer>

@@ -36,7 +36,7 @@ export const CoffeeCardItem = ({
           <S.PriceCifre>RS</S.PriceCifre>
           <S.PriceNumber>{price}</S.PriceNumber>
         </S.CoffeePrice>
-        <ControledAmount amount={5} id={id} title={title} />
+        <ControledAmount amount={5} id={id} title={title} price={price} />
         <S.CoffeeCart>
           <ShoppingCart size={24} color="#fff" weight="fill" />
         </S.CoffeeCart>

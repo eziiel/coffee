@@ -6,12 +6,12 @@ import { MapPin, ShoppingCart } from 'phosphor-react'
 import { ContextCoffees } from '../../context/context'
 
 export const Header = () => {
-  const { amountItens } = React.useContext(ContextCoffees)
+  const { amountCoffes, coffees, totalCoffees } =
+    React.useContext(ContextCoffees)
 
-  const handleCart = () => {
-    console.log(amountItens)
+  const handleTeste = () => {
+    console.log(coffees, totalCoffees)
   }
-
   return (
     <S.HeaderComponent>
       <NavLink to="/" title="home">
@@ -25,9 +25,9 @@ export const Header = () => {
             <MapPin size={24} />
             Sinop - MT
           </S.LiLocation>
-          <S.LiCart onClick={handleCart}>
+          <S.LiCart onClick={handleTeste}>
             <NavLink to={'/Adress'} title="Endereço - Carrinho">
-              <S.ItensInfoSpan> {amountItens} </S.ItensInfoSpan>
+              <S.ItensInfoSpan> {amountCoffes} </S.ItensInfoSpan>
               <ShoppingCart size={24} /* weight="bold" */ />
             </NavLink>
           </S.LiCart>

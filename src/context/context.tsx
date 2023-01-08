@@ -5,14 +5,17 @@ import { CoffeesReducer } from '../reducers/reducer'
 interface CoffeeContextType {
   id: number
   title: string
+  price: string
+  totalPrice?: string
   amount?: number
 }
 
 interface CoffeesContextTypes {
-  amountItens: number
+  amountCoffes: number
+  totalCoffees: number
   coffees: CoffeeContextType[]
   setCoffeesRequestItemAdd: (data: CoffeeContextType) => void
-  setCoffeesRequestItemRemove: (id: number) => void
+  setCoffeesRequestItemRemove: (id: number, price: string) => void
 }
 
 interface CyclesContextProps {
@@ -23,15 +26,24 @@ export const ContextCoffees = React.createContext({} as CoffeesContextTypes)
 
 export const CoffeesProvider = ({ children }: CyclesContextProps) => {
   const [coffees, dispatch] = React.useReducer(CoffeesReducer, [])
-  const setCoffeesRequestItemAdd = (data: CoffeeContextType) => {
+
+  const setCoffeesRequestItemAdd = ({
+    id,
+    title,
+    price,
+    amount,
+  }: CoffeeContextType) => {
     const NewCoffee = {
-      id: data.id,
-      title: data.title,
-      amount: data.amount,
+      id,
+      title,
+      price,
+      totalPrice: price,
+      amount,
     }
     const NewCoffeeCart = coffees.map((coffee: CoffeeContextType) => {
       if (coffee.id! === NewCoffee.id) {
         coffee.amount! += 1
+        coffee.totalPrice = (+coffee.totalPrice! + +NewCoffee.price).toFixed(2)
       }
       return coffee
     })
@@ -47,12 +59,13 @@ export const CoffeesProvider = ({ children }: CyclesContextProps) => {
     dispatch(AddNewCoffe(NewCoffeeCart))
   }
 
-  const setCoffeesRequestItemRemove = (id: number) => {
-    const NewListCoffee = coffees.map((item: CoffeeContextType) => {
-      if (item.id === id) {
-        item.amount! -= 1
+  const setCoffeesRequestItemRemove = (id: number, price: string) => {
+    const NewListCoffee = coffees.map((coffee: CoffeeContextType) => {
+      if (coffee.id === id) {
+        coffee.amount! -= 1
+        coffee.totalPrice = (+coffee.totalPrice! + -price).toFixed(2)
       }
-      return item
+      return coffee
     })
     const RemovedListCoffee = NewListCoffee.filter(
       (item: CoffeeContextType) => item.amount! > 0,
@@ -61,14 +74,23 @@ export const CoffeesProvider = ({ children }: CyclesContextProps) => {
     dispatch(RemoveDecrementCoffe(RemovedListCoffee))
   }
 
-  const amountItens = coffees.reduce(
+  const amountCoffes = coffees.reduce(
     (total: number, coffee: CoffeeContextType) => (total += coffee.amount!),
     0,
   )
+  const totalCoffees = coffees
+    .reduce(
+      (total: number, coffee: CoffeeContextType) =>
+        (total += +coffee.totalPrice!),
+      0,
+    )
+    .toFixed(2)
+
   return (
     <ContextCoffees.Provider
       value={{
-        amountItens,
+        amountCoffes,
+        totalCoffees,
         coffees,
         setCoffeesRequestItemAdd,
         setCoffeesRequestItemRemove,
