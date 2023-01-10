@@ -17,11 +17,9 @@ const BaseFormContainer = styled.div`
   border-radius: 8px;
 `
 
-// export const FormAdressFields = styled(BaseFormContainer).attrs({
-//   as: 'main',
-// })`
-
-export const FormAdressFields = styled(BaseFormContainer)`
+export const FormAdressFields = styled(BaseFormContainer).attrs({
+  as: 'main',
+})`
   display: grid;
   grid-template-columns: 1fr 1.5fr 50px;
   gap: 0.5rem;

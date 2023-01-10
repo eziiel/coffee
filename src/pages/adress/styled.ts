@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const AdressContainer = styled.main`
+export const FormContainer = styled.form`
   display: flex;
   gap: 3rem;
   margin-top: 3rem;

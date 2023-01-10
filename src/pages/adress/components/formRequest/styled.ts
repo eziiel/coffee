@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const FormRequestContainer = styled.form`
+export const FormRequestContainer = styled.div`
   width: 450px;
   height: fit-content;
 

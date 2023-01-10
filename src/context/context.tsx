@@ -6,7 +6,7 @@ import {
 } from '../reducers/actions'
 import { CoffeesReducer } from '../reducers/reducer'
 
-interface CoffeeContextType {
+export interface CoffeeContextType {
   id: number
   title: string
   price: string
