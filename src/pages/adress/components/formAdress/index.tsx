@@ -7,8 +7,22 @@ import {
   CreditCard,
   BoundingBox,
 } from 'phosphor-react'
+import { useFormContext } from 'react-hook-form'
+
+interface TypePay {
+  type: 'cartao' | 'dinheiro' | 'pix' | undefined
+}
 
 export const FormAdress = () => {
+  const { register } = useFormContext()
+  const [typePay, setTypePay] = React.useState<TypePay>()
+
+  const handleTypePay = (typeHandle: any) => {
+    const NewType = { type: typeHandle }
+    setTypePay(NewType)
+    console.log(typePay)
+  }
+
   return (
     <S.FormAdressContainer>
       <S.FormAdressTitle>Complete seu pedido</S.FormAdressTitle>
@@ -18,13 +32,30 @@ export const FormAdress = () => {
           <span>Endereço para entrega</span>
           <span> Informe o endereço onde deseja receber a entrega</span>
         </S.FormAdressHeader>
-        <S.AdressCep placeholder="CEP" />
-        <S.AdressStreet placeholder="Rua" />
-        <S.AdressNumber placeholder="Número" />
-        <S.AdressDistrict placeholder="Bairro" />
-        <S.AdressComplement placeholder="Complemento" />
-        <S.AdressCity placeholder="Cidade" />
-        <S.AdressState placeholder="UF" />
+        <S.AdressCep placeholder="CEP" title="CEP" {...register('cep')} />
+        <S.AdressStreet placeholder="Rua" title="Rua" {...register('rua')} />
+        <S.AdressNumber
+          type="number"
+          placeholder="Número"
+          title="Número"
+          {...register('numero')}
+        />
+        <S.AdressDistrict
+          placeholder="Bairro"
+          title="Bairro"
+          {...register('bairro')}
+        />
+        <S.AdressComplement
+          placeholder="Complemento"
+          title="Complemento"
+          {...register('complemento')}
+        />
+        <S.AdressCity
+          placeholder="Cidade"
+          title="Cidade"
+          {...register('cidade')}
+        />
+        <S.AdressState placeholder="UF" title="UF" {...register('uf')} />
       </S.FormAdressFields>
       <S.FormAdressPayType>
         <S.FormAdressPayTypeHeader>
@@ -36,15 +67,30 @@ export const FormAdress = () => {
             </span>
           </S.FooterHeader>
           <S.FooterCartPay>
-            <S.FooterCartItem title="Cartão" disabled>
+            <S.FooterCartItem
+              type="button"
+              onClick={() => handleTypePay('cartao')}
+              value="cartao"
+              title="Cartão"
+            >
               <CreditCard size={20} color="#05515A" />
               cartão
             </S.FooterCartItem>
-            <S.FooterCartItem title="Dinheiro" disabled>
+            <S.FooterCartItem
+              type="button"
+              onClick={() => handleTypePay('dinheiro')}
+              value="dinheiro"
+              title="Dinheiro"
+            >
               <Money size={20} color="#05515A" />
               dinheiro
             </S.FooterCartItem>
-            <S.FooterCartItem title="Pix">
+            <S.FooterCartItem
+              type="button"
+              onClick={() => handleTypePay('pix')}
+              value="pix"
+              title="Pix"
+            >
               <BoundingBox size={20} color="#05515A" />
               pix
             </S.FooterCartItem>
