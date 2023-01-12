@@ -10,7 +10,6 @@ interface CoffeeContextType {
   price: string
   img: string
   totalPrice: string
-  amount?: number | undefined
 }
 
 export const CartItem = ({
