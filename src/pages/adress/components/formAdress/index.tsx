@@ -9,20 +9,15 @@ import {
 } from 'phosphor-react'
 import { useFormContext } from 'react-hook-form'
 
-interface TypePay {
-  type: 'cartao' | 'dinheiro' | 'pix' | undefined
+interface SetValueType {
+  setValueType: (type: string) => void
 }
-
-export const FormAdress = () => {
+export const FormAdress = ({ setValueType }: SetValueType) => {
   const { register } = useFormContext()
-  const [typePay, setTypePay] = React.useState<TypePay>()
 
-  const handleTypePay = (typeHandle: any) => {
-    const NewType = { type: typeHandle }
-    setTypePay(NewType)
-    console.log(typePay)
+  const HandleType = (type: string) => {
+    setValueType(type)
   }
-
   return (
     <S.FormAdressContainer>
       <S.FormAdressTitle>Complete seu pedido</S.FormAdressTitle>
@@ -35,7 +30,6 @@ export const FormAdress = () => {
         <S.AdressCep placeholder="CEP" title="CEP" {...register('cep')} />
         <S.AdressStreet placeholder="Rua" title="Rua" {...register('rua')} />
         <S.AdressNumber
-          type="number"
           placeholder="Número"
           title="Número"
           {...register('numero')}
@@ -69,7 +63,7 @@ export const FormAdress = () => {
           <S.FooterCartPay>
             <S.FooterCartItem
               type="button"
-              onClick={() => handleTypePay('cartao')}
+              onClick={() => HandleType('cartao')}
               value="cartao"
               title="Cartão"
             >
@@ -78,7 +72,7 @@ export const FormAdress = () => {
             </S.FooterCartItem>
             <S.FooterCartItem
               type="button"
-              onClick={() => handleTypePay('dinheiro')}
+              onClick={() => HandleType('dinheiro')}
               value="dinheiro"
               title="Dinheiro"
             >
@@ -87,7 +81,7 @@ export const FormAdress = () => {
             </S.FooterCartItem>
             <S.FooterCartItem
               type="button"
-              onClick={() => handleTypePay('pix')}
+              onClick={() => HandleType('pix')}
               value="pix"
               title="Pix"
             >
