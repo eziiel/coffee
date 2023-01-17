@@ -1,5 +1,5 @@
 import React from 'react'
-import { ContextCoffees } from '../../../../context/context'
+import { ContextCoffees } from '../../../../context/contextCoffees/context'
 import { CartRequest } from './components/CartRequest'
 import { CartItem } from './components/ItemCard'
 import * as S from './styled'

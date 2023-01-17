@@ -4,6 +4,9 @@ import { MapPin, Timer, CurrencyDollar } from 'phosphor-react'
 import ImgDelivery from '../../../public/img/delivery.png'
 
 export const Delivery = () => {
+  const deliveryLocal = localStorage.getItem('adress-actual-delivery-v.1.0.0')
+
+  const Data = deliveryLocal ? JSON.parse(deliveryLocal) : 'sem informação'
   return (
     <S.DeliveryContent>
       <S.DeliveryInfo>
@@ -19,9 +22,9 @@ export const Delivery = () => {
               </S.IconMap>
               <span>
                 Entrega em
-                <strong> Rua João Daniel Martinelli, 102</strong>
+                <strong> {`${Data.rua}, ${Data.numero}`}</strong>
               </span>
-              <span>Farrapos - Porto Alegre, RS</span>
+              <span>{`${Data.bairro} - ${Data.cidade}, ${Data.cidade}`}</span>
             </S.DeliveryRequestInfoItem>
 
             <S.DeliveryRequestInfoItem>
@@ -40,7 +43,7 @@ export const Delivery = () => {
               </S.IconDollar>
               <span>Pagamento na entrega</span>
               <span>
-                <strong>Cartão de Crédito</strong>
+                <strong>{Data.payType}</strong>
               </span>
             </S.DeliveryRequestInfoItem>
           </S.DeliveryRequestInfo>

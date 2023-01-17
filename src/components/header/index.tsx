@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import * as S from './styled'
 import Logo from '../../../public/img/Logo.png'
 import { MapPin, ShoppingCart } from 'phosphor-react'
-import { ContextCoffees } from '../../context/context'
+import { ContextCoffees } from '../../context/contextCoffees/context'
 
 export const Header = () => {
   const { amountCoffes } = React.useContext(ContextCoffees)

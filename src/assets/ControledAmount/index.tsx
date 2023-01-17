@@ -1,5 +1,5 @@
 import React from 'react'
-import { ContextCoffees } from '../../context/context'
+import { ContextCoffees } from '../../context/contextCoffees/context'
 import * as S from './styled'
 
 interface CoffeeContextType {

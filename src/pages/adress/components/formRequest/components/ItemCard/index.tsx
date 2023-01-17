@@ -2,7 +2,7 @@ import React from 'react'
 import * as S from './styled'
 import { Trash } from 'phosphor-react'
 import { ControledAmount } from '../../../../../../assets/ControledAmount'
-import { ContextCoffees } from '../../../../../../context/context'
+import { ContextCoffees } from '../../../../../../context/contextCoffees/context'
 
 interface CoffeeContextType {
   id: number

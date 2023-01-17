@@ -3,8 +3,8 @@ import {
   AddNewCoffe,
   RemoveDecrementCoffe,
   RemoveItemAll,
-} from '../reducers/actions'
-import { CoffeesReducer } from '../reducers/reducer'
+} from '../../reducers/actions'
+import { CoffeesReducer } from '../../reducers/reducer'
 
 export interface CoffeeContextType {
   id: number

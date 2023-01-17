@@ -1,4 +1,8 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+
+interface FocusButton {
+  focusButton: boolean
+}
 
 export const FormAdressContainer = styled.div`
   display: flex;
@@ -114,7 +118,7 @@ export const FooterCartPay = styled.div`
   gap: 1rem;
 `
 
-export const FooterCartItem = styled.button`
+export const FooterCartItem = styled.button<FocusButton>`
   border: none;
   flex: 1;
 
@@ -130,11 +134,17 @@ export const FooterCartItem = styled.button`
   cursor: pointer;
   color: ${(props) => props.theme.gray700};
 
-  :hover,
-  :focus,
-  :enabled {
+  &:not(:disabled):hover,
+  &:not(:disabled):focus {
     outline: 0;
     background: ${(props) => props.theme.blue200};
     box-shadow: 0 0 0 2px ${(props) => props.theme.blue500};
   }
+  ${(props) =>
+    props.focusButton === true &&
+    css`
+      outline: 0;
+      background: ${(props) => props.theme.blue200};
+      box-shadow: 0 0 0 2px ${(props) => props.theme.blue500};
+    `}
 `

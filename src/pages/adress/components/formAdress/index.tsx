@@ -8,15 +8,21 @@ import {
   BoundingBox,
 } from 'phosphor-react'
 import { useFormContext } from 'react-hook-form'
+import { ContextAdress } from '../../../../context/contextAdress/context'
 
 interface SetValueType {
   setValueType: (type: string) => void
 }
+
+type TypePay = 'cartao' | 'dinheiro' | 'pix' | ''
+
 export const FormAdress = ({ setValueType }: SetValueType) => {
   const { register } = useFormContext()
+  const { typePay, SetPay } = React.useContext(ContextAdress)
 
-  const HandleType = (type: string) => {
+  const HandleType = (type: TypePay) => {
     setValueType(type)
+    SetPay(type)
   }
   return (
     <S.FormAdressContainer>
@@ -62,6 +68,7 @@ export const FormAdress = ({ setValueType }: SetValueType) => {
           </S.FooterHeader>
           <S.FooterCartPay>
             <S.FooterCartItem
+              focusButton={typePay === 'cartao'}
               type="button"
               onClick={() => HandleType('cartao')}
               value="cartao"
@@ -71,6 +78,7 @@ export const FormAdress = ({ setValueType }: SetValueType) => {
               cartão
             </S.FooterCartItem>
             <S.FooterCartItem
+              focusButton={typePay === 'dinheiro'}
               type="button"
               onClick={() => HandleType('dinheiro')}
               value="dinheiro"
@@ -80,6 +88,7 @@ export const FormAdress = ({ setValueType }: SetValueType) => {
               dinheiro
             </S.FooterCartItem>
             <S.FooterCartItem
+              focusButton={typePay === 'pix'}
               type="button"
               onClick={() => HandleType('pix')}
               value="pix"

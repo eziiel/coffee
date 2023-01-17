@@ -5,11 +5,12 @@ import * as S from './styled'
 import { useForm, FormProvider } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as zod from 'zod'
-import { ContextAdressProvider } from './contextAdress/context'
-import { ContextCoffees } from '../../context/context'
+import { ContextCoffees } from '../../context/contextCoffees/context'
+import { ContextAdress } from '../../context/contextAdress/context'
+import { useNavigate } from 'react-router-dom'
 
 const formValidatorSchema = zod.object({
-  bairro: zod.string().min(5),
+  bairro: zod.string().min(5, 'preecha um CEP válido'),
   cep: zod.string().min(8).max(9),
   cidade: zod.string().min(5),
   complemento: zod.string().optional(),
@@ -39,13 +40,22 @@ export const Adress = () => {
   })
   const { amountCoffes } = React.useContext(ContextCoffees)
   const { handleSubmit, setValue } = NewDeliveryForm
+  const { SetCartSubmitFunction } = React.useContext(ContextAdress)
 
+  const navigate = useNavigate()
   const HandleCreateAdress = (data: NewAdressFormData) => {
-    console.log(data)
+    SetCartSubmitFunction(data)
+    const DataLocalStorageDelivery = JSON.stringify(data)
+
+    localStorage.setItem(
+      'adress-actual-delivery-v.1.0.0',
+      DataLocalStorageDelivery,
+    )
+    navigate('/delivery')
   }
 
   React.useEffect(() => {
-    return setValue('coffees', amountCoffes)
+    setValue('coffees', amountCoffes)
   }, [amountCoffes, setValue])
 
   const setValueType = (type: string) => {
@@ -53,12 +63,10 @@ export const Adress = () => {
   }
   return (
     <S.FormContainer action="" onSubmit={handleSubmit(HandleCreateAdress)}>
-      <ContextAdressProvider>
-        <FormProvider {...NewDeliveryForm}>
-          <FormAdress setValueType={setValueType} />
-          <FormRequest />
-        </FormProvider>
-      </ContextAdressProvider>
+      <FormProvider {...NewDeliveryForm}>
+        <FormAdress setValueType={setValueType} />
+        <FormRequest />
+      </FormProvider>
     </S.FormContainer>
   )
 }
