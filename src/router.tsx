@@ -10,8 +10,8 @@ export const Router = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/adress" element={<Adress />} />
-          <Route path="/delivery" element={<Delivery />} />
+          <Route path="adress" element={<Adress />} />
+          <Route path="delivery" element={<Delivery />} />
         </Route>
       </Routes>
     </div>

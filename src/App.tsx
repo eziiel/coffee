@@ -9,14 +9,14 @@ import { AdressProvider } from './context/contextAdress/context'
 export const App = () => {
   return (
     <ThemeProvider theme={themeDefault}>
-      <CoffeesProvider>
-        <AdressProvider>
-          <BrowserRouter>
+      <BrowserRouter>
+        <CoffeesProvider>
+          <AdressProvider>
             <Router />
-          </BrowserRouter>
-        </AdressProvider>
-        <GlobalStyles />
-      </CoffeesProvider>
+          </AdressProvider>
+          <GlobalStyles />
+        </CoffeesProvider>
+      </BrowserRouter>
     </ThemeProvider>
   )
 }
