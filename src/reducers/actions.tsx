@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+import { CartSubmit } from '../context/contextAdress/reducer'
 import { CoffeeContextType } from './reducer'
 
 export enum ActionCoffesTypes {
@@ -28,6 +29,15 @@ export function RemoveItemAll(RemovedListCoffee: CoffeeContextType) {
     type: 'REMOVE_ITEM_COFFEE',
     payload: {
       RemovedListCoffee,
+    },
+  }
+}
+
+export function AddCartSubmit(newCartSubmited: CartSubmit) {
+  return {
+    type: 'CART_FORM_DATA',
+    payload: {
+      newCartSubmited,
     },
   }
 }

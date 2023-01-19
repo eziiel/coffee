@@ -7,6 +7,7 @@ export const Delivery = () => {
   const deliveryLocal = localStorage.getItem('adress-actual-delivery-v.1.0.0')
 
   const Data = deliveryLocal ? JSON.parse(deliveryLocal) : 'sem informação'
+  const DataCookie = JSON.parse(document.cookie)
   return (
     <S.DeliveryContent>
       <S.DeliveryInfo>
@@ -22,9 +23,11 @@ export const Delivery = () => {
               </S.IconMap>
               <span>
                 Entrega em
-                <strong> {`${Data.rua}, ${Data.numero}`}</strong>
+                {/* <strong> {`${Data.rua}, ${Data.numero}`}</strong> */}
+                <strong> {`${DataCookie.rua}, ${DataCookie.numero}`}</strong>
               </span>
-              <span>{`${Data.bairro} - ${Data.cidade}, ${Data.cidade}`}</span>
+              {/* <span>{`${Data.bairro} - ${Data.cidade}, ${Data.cidade}`}</span> */}
+              <span>{`${DataCookie.bairro} - ${DataCookie.cidade}, ${DataCookie.cidade}`}</span>
             </S.DeliveryRequestInfoItem>
 
             <S.DeliveryRequestInfoItem>
@@ -43,7 +46,8 @@ export const Delivery = () => {
               </S.IconDollar>
               <span>Pagamento na entrega</span>
               <span>
-                <strong>{Data.payType}</strong>
+                {/* <strong>{Data.payType}</strong> */}
+                <strong>{DataCookie.payType}</strong>
               </span>
             </S.DeliveryRequestInfoItem>
           </S.DeliveryRequestInfo>

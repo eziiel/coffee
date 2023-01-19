@@ -1,9 +1,10 @@
 import React, { ReactNode } from 'react'
+import { AddCartSubmit } from '../../reducers/actions'
 import { AddNewFormData } from './reducer'
 
 type TypePay = 'cartao' | 'dinheiro' | 'pix' | ''
 
-export interface CartSubmit {
+interface CartSubmit {
   bairro: string
   cep: string
   cidade: string
@@ -30,7 +31,7 @@ export const ContextAdress = React.createContext(
   {} as FormValidatorAdressSchema,
 )
 export const AdressProvider = ({ children }: TypeChildren) => {
-  const [typePay, setTypePay] = React.useState<TypePay>('')
+  const [typePay, setTypePay] = React.useState<TypePay>('dinheiro')
   const [cartSubmit, dispatch] = React.useReducer(AddNewFormData, {})
 
   const SetPay = (type: TypePay) => {
@@ -38,12 +39,9 @@ export const AdressProvider = ({ children }: TypeChildren) => {
   }
 
   const SetCartSubmitFunction = (cart: CartSubmit) => {
-    dispatch({
-      type: 'CART_FORM_DATA',
-      payload: {
-        cart,
-      },
-    })
+    const newCartSubmited = cart
+
+    dispatch(AddCartSubmit(newCartSubmited))
   }
 
   return (

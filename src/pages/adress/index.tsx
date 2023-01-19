@@ -46,6 +46,7 @@ export const Adress = () => {
   const HandleCreateAdress = (data: NewAdressFormData) => {
     SetCartSubmitFunction(data)
     const DataLocalStorageDelivery = JSON.stringify(data)
+    document.cookie = JSON.stringify(data)
 
     localStorage.setItem(
       'adress-actual-delivery-v.1.0.0',
