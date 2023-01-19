@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom'
 import { Layout } from './layout'
-import { Adress } from './assets/adress'
-import { Delivery } from './assets/delivery'
-import { Home } from './assets/home'
+import { Adress } from './pages/adress'
+import { Delivery } from './pages/delivery'
+import { Home } from './pages/home'
 
 export const Router = () => {
   return (
