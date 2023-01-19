@@ -21,8 +21,11 @@ export const Header = () => {
             <MapPin size={24} />
             Sinop - MT
           </S.LiLocation>
+          <NavLink to={'/delivery'} title="pedidos        ">
+            <span>pedidos</span>
+          </NavLink>
           <S.LiCart>
-            <NavLink to={'/Adress'} title="Endereço - Carrinho">
+            <NavLink to={'/adress'} title="Endereço - Carrinho">
               <S.ItensInfoSpan> {amountCoffes} </S.ItensInfoSpan>
               <ShoppingCart size={24} /* weight="bold" */ />
             </NavLink>
