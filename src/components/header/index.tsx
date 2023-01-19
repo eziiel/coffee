@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import * as S from './styled'
 import Logo from '../../../public/img/Logo.png'
 import { MapPin, ShoppingCart } from 'phosphor-react'
@@ -10,25 +10,25 @@ export const Header = () => {
 
   return (
     <S.HeaderComponent>
-      <NavLink to="/" title="home">
+      <Link to="/" title="home">
         <S.LogoCoffee>
           <img src={Logo} alt="" />
         </S.LogoCoffee>
-      </NavLink>
+      </Link>
       <S.NavHeader>
         <S.UlHeader>
           <S.LiLocation title="Localização">
             <MapPin size={24} />
             Sinop - MT
           </S.LiLocation>
-          <NavLink to={'/delivery'} title="pedidos        ">
+          <Link to={'/delivery'} title="pedidos        ">
             <span>pedidos</span>
-          </NavLink>
+          </Link>
           <S.LiCart>
-            <NavLink to={'/adress'} title="Endereço - Carrinho">
+            <Link to={'/adress'} title="Endereço - Carrinho">
               <S.ItensInfoSpan> {amountCoffes} </S.ItensInfoSpan>
               <ShoppingCart size={24} /* weight="bold" */ />
-            </NavLink>
+            </Link>
           </S.LiCart>
         </S.UlHeader>
       </S.NavHeader>
