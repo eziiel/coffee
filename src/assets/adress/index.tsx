@@ -8,7 +8,6 @@ import * as zod from 'zod'
 import { ContextCoffees } from '../../context/contextCoffees/context'
 import { ContextAdress } from '../../context/contextAdress/context'
 import { useNavigate } from 'react-router-dom'
-import { Header } from '../../components/header'
 
 const formValidatorSchema = zod.object({
   bairro: zod.string().min(5, 'preecha um CEP válido'),
@@ -64,14 +63,11 @@ export const Adress = () => {
     setValue('payType', type)
   }
   return (
-    <>
-      <Header />
-      <S.FormContainer action="" onSubmit={handleSubmit(HandleCreateAdress)}>
-        <FormProvider {...NewDeliveryForm}>
-          <FormAdress setValueType={setValueType} />
-          <FormRequest />
-        </FormProvider>
-      </S.FormContainer>
-    </>
+    <S.FormContainer action="" onSubmit={handleSubmit(HandleCreateAdress)}>
+      <FormProvider {...NewDeliveryForm}>
+        <FormAdress setValueType={setValueType} />
+        <FormRequest />
+      </FormProvider>
+    </S.FormContainer>
   )
 }

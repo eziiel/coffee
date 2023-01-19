@@ -1,7 +1,7 @@
 import React from 'react'
 import * as S from './styled'
 import { ShoppingCart } from 'phosphor-react'
-import { ControledAmount } from '../../../../../assets/ControledAmount'
+import { ControledAmount } from '../../../../../components/ControledAmount'
 
 interface DataCoffees {
   id: number
