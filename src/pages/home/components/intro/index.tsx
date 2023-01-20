@@ -15,33 +15,39 @@ export const IntroHome = () => {
           hora.
         </S.IntroText>
 
-        <S.IntroInfo>
-          <S.IntroInfoItem>
-            <S.IconCart>
-              <ShoppingCart color="#fff" size={20} />
-            </S.IconCart>
-            Compra simples e segura
-          </S.IntroInfoItem>
-          <S.IntroInfoItem>
-            <S.IconPackage>
-              <Package color="#fff" size={20} />
-            </S.IconPackage>
-            Embalagem mantém o café intacto
-          </S.IntroInfoItem>
+        <S.IntroShowAll>
+          <S.IntroInfo>
+            <S.IntroInfoItem>
+              <S.IconCart>
+                <ShoppingCart color="#fff" size={20} />
+              </S.IconCart>
+              Compra simples e segura
+            </S.IntroInfoItem>
+            <S.IntroInfoItem>
+              <S.IconPackage>
+                <Package color="#fff" size={20} />
+              </S.IconPackage>
+              Embalagem mantém o café intacto
+            </S.IntroInfoItem>
 
-          <S.IntroInfoItem>
-            <S.IconTimer>
-              <Timer color="#fff" size={20} />
-            </S.IconTimer>
-            Entrega rápida e rastreada
-          </S.IntroInfoItem>
-          <S.IntroInfoItem>
-            <S.IconCoffee>
-              <Coffee color="#fff" size={20} />
-            </S.IconCoffee>
-            O café chega fresquinho até você
-          </S.IntroInfoItem>
-        </S.IntroInfo>
+            <S.IntroInfoItem>
+              <S.IconTimer>
+                <Timer color="#fff" size={20} />
+              </S.IconTimer>
+              Entrega rápida e rastreada
+            </S.IntroInfoItem>
+            <S.IntroInfoItem>
+              <S.IconCoffee>
+                <Coffee color="#fff" size={20} />
+              </S.IconCoffee>
+              O café chega fresquinho até você
+            </S.IntroInfoItem>
+          </S.IntroInfo>
+          <S.IntroImgReponse
+            src={IntroImg}
+            alt="Copo de cafe com grãos de café do lado"
+          />
+        </S.IntroShowAll>
       </S.IntroShow>
       <S.IntroImg src={IntroImg} alt="Copo de cafe com grãos de café do lado" />
     </S.IntroHome>

@@ -1,14 +1,13 @@
 import styled from 'styled-components'
 
 export const CoffeeCard = styled.div`
-  background: red;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
   max-width: 260px;
+  height: 380px;
   border-radius: 8px 40px 8px 40px;
   padding: 1rem;
   gap: 1rem;
