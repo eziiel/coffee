@@ -21,9 +21,6 @@ export const Header = () => {
             <MapPin size={24} />
             Sinop - MT
           </S.LiLocation>
-          <Link to={'/delivery'} title="pedidos        ">
-            <span>pedidos</span>
-          </Link>
           <S.LiCart>
             <Link to={'/adress'} title="Endereço - Carrinho">
               <S.ItensInfoSpan> {amountCoffes} </S.ItensInfoSpan>

@@ -1,10 +1,25 @@
 import styled from 'styled-components'
 
 export const FormRequestContainer = styled.div`
-  width: 450px;
   height: fit-content;
-
+  width: 350px;
   overflow: hidden;
+
+  @media (max-width: 1040px) {
+    width: 700px;
+  }
+  @media (max-width: 800px) {
+    width: 600px;
+  }
+  @media (max-width: 650px) {
+    width: 500px;
+  }
+  @media (max-width: 580px) {
+    width: 400px;
+  }
+  @media (max-width: 450px) {
+    width: 300px;
+  }
 `
 export const FormRequestTitle = styled.h2`
   padding: 1rem 0;

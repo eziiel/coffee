@@ -8,6 +8,10 @@ export const HeaderComponent = styled.header`
 
   height: 6.5rem;
   margin: 0 auto;
+  @media (max-width: 590px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
 `
 export const LogoCoffee = styled.div`
   padding: 1rem 1rem 1rem 0;

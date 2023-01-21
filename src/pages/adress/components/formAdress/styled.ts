@@ -7,8 +7,23 @@ interface FocusButton {
 export const FormAdressContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 700px;
   gap: 1rem;
+
+  @media (max-width: 1040px) {
+    width: 700px;
+  }
+  @media (max-width: 800px) {
+    width: 600px;
+  }
+  @media (max-width: 650px) {
+    width: 500px;
+  }
+  @media (max-width: 580px) {
+    width: 400px;
+  }
+  @media (max-width: 450px) {
+    width: 300px;
+  }
 `
 
 export const FormAdressTitle = styled.h2`
@@ -53,6 +68,7 @@ const BaseInputFields = styled.input`
   padding: 1rem;
   border-radius: 8px;
   font-size: 0.875rem;
+  overflow: hidden;
 `
 
 export const AdressCep = styled(BaseInputFields)`
@@ -116,6 +132,10 @@ export const FooterHeader = styled.div`
 export const FooterCartPay = styled.div`
   display: flex;
   gap: 1rem;
+
+  @media (max-width: 580px) {
+    flex-direction: column;
+  }
 `
 
 export const FooterCartItem = styled.button<FocusButton>`
@@ -126,6 +146,10 @@ export const FooterCartItem = styled.button<FocusButton>`
   align-items: center;
   justify-content: start;
   gap: 1rem;
+
+  @media (max-width: 580px) {
+    padding-left: 35%;
+  }
 
   background: ${(props) => props.theme.gray200};
   padding: 1rem;

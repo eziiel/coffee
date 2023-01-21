@@ -8,17 +8,24 @@ export const ItemCardRequest = styled.div`
   gap: 1rem;
   margin: 0.5rem;
   padding: 1rem;
-  border-bottom: 1px solid ${(props) => props.theme.gray200}; ;
+  border-bottom: 1px solid ${(props) => props.theme.gray200};
+
+  @media (max-width: 1040px) {
+    grid-template-columns: 1fr;
+  }
 `
 
 export const ImgCardRequest = styled.img`
   width: 60px;
+  justify-self: center;
 `
 
 export const InfoItemCardRequest = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0.5rem;
+  justify-self: center;
+  text-align: center;
 `
 
 export const TitleItemCardRequest = styled.span`
@@ -55,7 +62,7 @@ export const ButtonItemCardRequest = styled.button`
   }
 `
 
-export const PriceCardRequest = styled.strong`
+const BasePriceCardRequest = styled.div`
   align-self: flex-start;
   color: ${(props) => props.theme.gray400};
   font-size: 0.875rem;
@@ -63,4 +70,18 @@ export const PriceCardRequest = styled.strong`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+`
+
+export const PriceCardRequest = styled(BasePriceCardRequest)`
+  @media (max-width: 1040px) {
+    display: none;
+  }
+`
+export const PriceCardRequestResponse = styled(BasePriceCardRequest)`
+  grid-column: 1/-1;
+  justify-content: space-around;
+
+  flex-direction: row;
+  @media (max-width: 1040px) {
+  }
 `

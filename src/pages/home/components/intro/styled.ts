@@ -24,6 +24,9 @@ export const IntroImgReponse = styled.img`
     display: initial;
     padding-top: 2rem;
   }
+  @media (max-width: 590px) {
+    display: none;
+  }
 `
 
 export const IntroShow = styled.div`
@@ -35,6 +38,10 @@ export const IntroShowAll = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 3rem;
+
+  @media (max-width: 590px) {
+    justify-content: center;
+  }
 `
 
 export const IntroTitle = styled.h1`

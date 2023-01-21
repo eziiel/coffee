@@ -3,7 +3,7 @@ import { ContextCoffees } from '../../../../../../context/contextCoffees/context
 import * as S from './styled'
 
 export const CartRequest = () => {
-  const { totalCoffees, coffees } = React.useContext(ContextCoffees)
+  const { totalCoffees } = React.useContext(ContextCoffees)
 
   const discount: string = (totalCoffees * 0.1).toFixed(2)
 
