@@ -75,12 +75,17 @@ export const PriceNumber = styled.span`
 export const CoffeeCart = styled.button`
   height: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
   margin-left: 1rem;
-  padding: 0.5rem;
   background: ${(props) => props.theme.blue900};
   border-radius: 8px;
   border: none;
   cursor: pointer;
+  overflow: hidden;
+
+  a {
+    padding: 0.5rem;
+    width: 100%;
+    height: 100%;
+  }
 `

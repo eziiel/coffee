@@ -42,6 +42,11 @@ export const FormAdressFields = styled(BaseFormContainer).attrs({
   display: grid;
   grid-template-columns: 1fr 1.5fr 50px;
   gap: 0.5rem;
+
+  @media (max-width: 580px) {
+    display: flex;
+    flex-direction: column;
+  }
 `
 
 export const FormAdressHeader = styled.header`
@@ -73,6 +78,9 @@ const BaseInputFields = styled.input`
 
 export const AdressCep = styled(BaseInputFields)`
   grid-row: 2;
+  @media (max-width: 580px) {
+    width: 150px;
+  }
 `
 
 export const AdressStreet = styled(BaseInputFields)`
@@ -83,6 +91,9 @@ export const AdressStreet = styled(BaseInputFields)`
 export const AdressNumber = styled(BaseInputFields)`
   grid-row: 4;
   grid-column: 1 / 2;
+  @media (max-width: 580px) {
+    width: 100px;
+  }
 `
 
 export const AdressComplement = styled(BaseInputFields)`
@@ -98,11 +109,18 @@ export const AdressDistrict = styled(BaseInputFields)`
 export const AdressCity = styled(BaseInputFields)`
   grid-row: 5;
   grid-column: 2 / 3;
+
+  @media (max-width: 580px) {
+    width: 150px;
+  }
 `
 
 export const AdressState = styled(BaseInputFields)`
   grid-row: 5;
   grid-column: 3 / -1;
+  @media (max-width: 580px) {
+    width: 50px;
+  }
 `
 
 export const FormAdressPayType = styled(BaseFormContainer).attrs({

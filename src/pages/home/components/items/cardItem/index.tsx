@@ -2,6 +2,7 @@ import React from 'react'
 import * as S from './styled'
 import { ShoppingCart } from 'phosphor-react'
 import { ControledAmount } from '../../../../../components/ControledAmount'
+import { NavLink } from 'react-router-dom'
 
 interface DataCoffees {
   id: number
@@ -38,7 +39,9 @@ export const CoffeeCardItem = ({
         </S.CoffeePrice>
         <ControledAmount id={id} title={title} price={price} img={img} />
         <S.CoffeeCart>
-          <ShoppingCart size={24} color="#fff" weight="fill" />
+          <NavLink to={'/adress'}>
+            <ShoppingCart size={24} color="#fff" weight="fill" />
+          </NavLink>
         </S.CoffeeCart>
       </S.CoffeeBuy>
     </S.CoffeeCard>

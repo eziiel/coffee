@@ -19,6 +19,7 @@ export const GlobalStyles = createGlobalStyle`
     font-weight: 400;
     font-size: 1rem;
     -webkit-font-smothing: antialiesed;
+    color: ${(props) => props.theme.gray700};
   }
 
   li,ul,a{
