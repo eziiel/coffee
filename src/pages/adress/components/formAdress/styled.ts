@@ -42,10 +42,55 @@ export const FormAdressFields = styled(BaseFormContainer).attrs({
   display: grid;
   grid-template-columns: 1fr 1.5fr 50px;
   gap: 0.5rem;
+  position: relative;
+
+  button:first-child {
+    display: none;
+  }
+
+  :hover {
+    button:first-child {
+      display: initial;
+    }
+  }
 
   @media (max-width: 580px) {
     display: flex;
     flex-direction: column;
+  }
+`
+
+export const LastAdressUsed = styled.button`
+  position: absolute;
+  top: 30%;
+  right: 0;
+
+  margin-right: 2rem;
+  padding: 1rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.875rem;
+
+  transition: 0.8s ease-in-out;
+
+  background: ${(props) => props.theme.yellow600};
+  color: ${(props) => props.theme.light100};
+  text-transform: capitalize;
+  cursor: pointer;
+
+  :hover {
+    background: ${(props) => props.theme.yellow500};
+    color: ${(props) => props.theme.white};
+  }
+
+  :focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px ${(props) => props.theme.yellow600};
+  }
+
+  @media (max-width: 580px) {
+    top: 24.5%;
+    font-size: 0.6rem;
   }
 `
 
@@ -79,7 +124,7 @@ const BaseInputFields = styled.input`
 export const AdressCep = styled(BaseInputFields)`
   grid-row: 2;
   @media (max-width: 580px) {
-    width: 150px;
+    width: 100px;
   }
 `
 

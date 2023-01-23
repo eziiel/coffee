@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import * as S from './styled'
 import { ShoppingCart } from 'phosphor-react'
 import { ControledAmount } from '../../../../../components/ControledAmount'
 import { NavLink } from 'react-router-dom'
+import { ContextCoffees } from '../../../../../context/contextCoffees/context'
 
 interface DataCoffees {
   id: number
@@ -21,6 +22,23 @@ export const CoffeeCardItem = ({
   price,
   type,
 }: DataCoffees) => {
+  const { setCoffeesRequestItemAdd, coffees } = useContext(ContextCoffees)
+
+  const handleCofeeButton = () => {
+    const coffeeExist = coffees.find((item) => item.id === id)
+
+    const NewCoffeeButton = {
+      id,
+      title,
+      price,
+      img,
+      amount: 1,
+    }
+    if (!coffeeExist) {
+      setCoffeesRequestItemAdd(NewCoffeeButton)
+    }
+  }
+
   return (
     <S.CoffeeCard>
       <S.CoffeeImg src={img} title="" />
@@ -39,7 +57,7 @@ export const CoffeeCardItem = ({
         </S.CoffeePrice>
         <ControledAmount id={id} title={title} price={price} img={img} />
         <S.CoffeeCart>
-          <NavLink to={'/adress'}>
+          <NavLink to={'/adress'} onClick={handleCofeeButton}>
             <ShoppingCart size={24} color="#fff" weight="fill" />
           </NavLink>
         </S.CoffeeCart>

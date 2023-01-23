@@ -9,14 +9,16 @@ import {
 } from 'phosphor-react'
 import { useFormContext } from 'react-hook-form'
 import { ContextAdress } from '../../../../context/contextAdress/context'
+import { DefaultAdressValue } from '../../index'
 
 interface SetValueType {
   setValueType: (type: string) => void
+  setAdressLasted: (data: typeof DefaultAdressValue) => void
 }
 
 type TypePay = 'cartao' | 'dinheiro' | 'pix' | ''
 
-export const FormAdress = ({ setValueType }: SetValueType) => {
+export const FormAdress = ({ setValueType, setAdressLasted }: SetValueType) => {
   const { register } = useFormContext()
   const { typePay, SetPay } = React.useContext(ContextAdress)
 
@@ -24,10 +26,29 @@ export const FormAdress = ({ setValueType }: SetValueType) => {
     setValueType(type)
     SetPay(type)
   }
+
+  const dataAdressExistLocalStorage = localStorage.getItem(
+    'adress-actual-delivery-v.1.0.0',
+  )
+  const dataAdressExistLocalStorageExist = dataAdressExistLocalStorage
+    ? JSON.parse(dataAdressExistLocalStorage)
+    : DefaultAdressValue
+
+  const handleLastAdress = () => {
+    setAdressLasted(dataAdressExistLocalStorageExist)
+  }
+
+  const activeUseButtonLastAdress = dataAdressExistLocalStorageExist.cep
+
   return (
     <S.FormAdressContainer>
       <S.FormAdressTitle>Complete seu pedido</S.FormAdressTitle>
       <S.FormAdressFields>
+        {activeUseButtonLastAdress ? (
+          <S.LastAdressUsed type="button" onClick={handleLastAdress}>
+            Usar último endereço
+          </S.LastAdressUsed>
+        ) : null}
         <S.FormAdressHeader>
           <MapPinLine size={20} color="#C47F17" />
           <span>Endereço para entrega</span>

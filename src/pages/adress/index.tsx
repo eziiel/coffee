@@ -23,20 +23,22 @@ const formValidatorSchema = zod.object({
 
 export type NewAdressFormData = zod.infer<typeof formValidatorSchema>
 
+export const DefaultAdressValue = {
+  bairro: '',
+  cep: '',
+  cidade: '',
+  complemento: '',
+  numero: '',
+  rua: '',
+  uf: '',
+  payType: '',
+  coffees: 0,
+}
+
 export const Adress = () => {
   const NewDeliveryForm = useForm({
     resolver: zodResolver(formValidatorSchema),
-    defaultValues: {
-      bairro: '',
-      cep: '',
-      cidade: '',
-      complemento: '',
-      numero: '',
-      rua: '',
-      uf: '',
-      payType: '',
-      coffees: 0,
-    },
+    defaultValues: DefaultAdressValue,
   })
   const { amountCoffes } = React.useContext(ContextCoffees)
   const { handleSubmit, setValue } = NewDeliveryForm
@@ -62,10 +64,27 @@ export const Adress = () => {
   const setValueType = (type: string) => {
     setValue('payType', type)
   }
+
+  const setAdressLasted = (data: NewAdressFormData) => {
+    setValue('bairro', data.bairro)
+    setValue('bairro', data.bairro)
+    setValue('cep', data.cep)
+    setValue('cidade', data.bairro)
+    setValue('complemento', data.complemento || '')
+    setValue('numero', data.numero)
+    setValue('rua', data.rua)
+    setValue('uf', data.uf)
+    setValue('payType', data.payType)
+    setValue('coffees', data.coffees)
+  }
+
   return (
     <S.FormContainer action="" onSubmit={handleSubmit(HandleCreateAdress)}>
       <FormProvider {...NewDeliveryForm}>
-        <FormAdress setValueType={setValueType} />
+        <FormAdress
+          setValueType={setValueType}
+          setAdressLasted={setAdressLasted}
+        />
         <FormRequest />
       </FormProvider>
     </S.FormContainer>

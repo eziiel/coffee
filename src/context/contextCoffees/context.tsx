@@ -75,6 +75,7 @@ export const CoffeesProvider = ({ children }: CyclesContextProps) => {
       }
       return coffee
     })
+
     const RemovedListCoffee = NewListCoffee.filter(
       (item: CoffeeContextType) => item.amount! > 0,
     )
@@ -94,6 +95,7 @@ export const CoffeesProvider = ({ children }: CyclesContextProps) => {
     (total: number, coffee: CoffeeContextType) => (total += coffee.amount!),
     0,
   )
+
   const totalCoffees = coffees
     .reduce(
       (total: number, coffee: CoffeeContextType) =>
