@@ -5,6 +5,12 @@ export const DeliveryContent = styled.main`
   gap: 4rem;
   padding: 2rem;
   margin-top: 2rem;
+
+  @media (max-width: 1070px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `
 
 export const DeliveryInfo = styled.div`
@@ -20,9 +26,6 @@ export const DeliveryInfoTitle = styled.div`
 `
 
 export const DeliveryRequestInfoBorder = styled.div`
-  /* width: 500px;
-  height: 500px; */
-
   background: linear-gradient(
     135deg,
     ${(propos) => propos.theme.yellow500},
@@ -33,23 +36,25 @@ export const DeliveryRequestInfoBorder = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 5px;
 `
 
 export const DeliveryRequestInfo = styled.div`
-  width: 98%;
-  height: 98%;
   border-radius: 8px 58px 8px 58px;
 
   background: ${(props) => props.theme.light200};
-  border: 20px solid transparent;
 
   display: flex;
   flex-direction: column;
   align-items: start;
-  justify-content: center;
+  flex: 1;
   gap: 2.5rem;
 
-  padding: 1rem;
+  padding: 2rem;
+
+  @media (max-width: 1070px) {
+    gap: 2rem;
+  }
 `
 
 export const DeliveryRequestInfoItem = styled.div`
@@ -66,6 +71,9 @@ export const DeliveryRequestInfoItem = styled.div`
   span:nth-child(3) {
     grid-column: 2;
   }
+  @media (max-width: 500px) {
+    font-size: 0.875rem;
+  }
 `
 
 const BaseIcon = styled.div`
@@ -77,6 +85,11 @@ const BaseIcon = styled.div`
 
   border-radius: 50%;
   padding: 0.5rem;
+
+  @media (max-width: 500px) {
+    width: 30px;
+    height: 30px;
+  }
 `
 export const IconDollar = styled(BaseIcon)`
   background: ${(props) => props.theme.blue700};
@@ -89,7 +102,14 @@ export const IconMap = styled(BaseIcon)`
 `
 
 export const DeliveryImg = styled.img`
-  align-self: end;
   width: auto;
   height: auto;
+  align-self: end;
+
+  @media (max-width: 1070px) {
+    align-self: center;
+  }
+  @media (max-width: 500px) {
+    width: 80%;
+  }
 `

@@ -34,10 +34,10 @@ export const CartItem = ({
           <Trash color="#05515A" />
           Remover
         </S.ButtonItemCardRequest>
-        <S.PriceCardRequestResponse>
+        <S.PriceCardReques>
           <span>RS {price}</span>
           <span>RS {totalPrice || '0'}</span>
-        </S.PriceCardRequestResponse>
+        </S.PriceCardReques>
       </S.InfoItemCardRequest>
     </S.ItemCardRequest>
   )

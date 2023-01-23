@@ -62,7 +62,7 @@ export const ButtonItemCardRequest = styled.button`
   }
 `
 
-const BasePriceCardRequest = styled.div`
+export const PriceCardReques = styled.div`
   align-self: flex-start;
   color: ${(props) => props.theme.gray400};
   font-size: 0.875rem;
@@ -70,14 +70,6 @@ const BasePriceCardRequest = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-`
-
-export const PriceCardRequest = styled(BasePriceCardRequest)`
-  @media (max-width: 1040px) {
-    display: none;
-  }
-`
-export const PriceCardRequestResponse = styled(BasePriceCardRequest)`
   grid-column: 1/-1;
   justify-content: space-around;
 
